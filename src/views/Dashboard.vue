@@ -41,6 +41,23 @@
 </template>
 
 <script lang="ts" setup>
+interface Product {
+  id: number;
+  name: string;
+  dateAdded: string;
+  price: number;
+  totalSales: number;
+}
+
+interface SalesData {
+  name: string;
+  sales: number;
+}
+
+interface CategorySalesData {
+  category: string;
+  sales: number;
+}
 import { ref, onMounted } from 'vue';
 import { useAnalyticsStore } from '@/stores/analytics';
 import { useProductStore } from '@/stores/product';

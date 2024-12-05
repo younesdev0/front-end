@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue';
 import Chart from 'chart.js/auto';
-import { ProductSales } from '@/types';
+import type { ProductSales } from '@/types';
 
 const props = defineProps<{
   data: ProductSales[];
