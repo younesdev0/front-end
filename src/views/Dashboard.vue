@@ -4,11 +4,8 @@
       <div class="content-padding">
         <h1 class="dashboard-title">Sales Dashboard</h1>
 
-        
-
         <div class="statistics-grid">
-          <StatCard v-if="totalSales" title="Total Sales" :value="totalSales"  suffix="$" />
-
+          <StatCard v-if="totalSales" title="Total Sales" :value="totalSales" suffix="$" />
           <Cards v-if="topProduct" :topProducts="topProduct" />
           <StatCard v-if="categoryCount" title="Sales Distribution by Category" :value="categoryCount" suffix="%" />
         </div>
@@ -22,7 +19,7 @@
           <div class="loader"></div>
         </div>
 
-      <div class="filter-container" v-else :products="products?.length" >
+        <div class="filter-container" v-else :products="products?.length">
           <label for="time-period" class="filter-label">Select Time Period</label>
           <select
             id="time-period"
@@ -42,9 +39,6 @@
 </template>
 
 <script lang="ts" setup>
-
-
-
 import { ref, onMounted } from 'vue';
 import { useAnalyticsStore } from '@/stores/analytics';
 import { useProductStore } from '@/stores/product';
@@ -55,6 +49,10 @@ import CategorySalesChart from '@/components/CategorySalesChart.vue';
 import ProductSalesHistogram from '@/components/ProductSalesHistogram.vue';
 import ProductTable from '@/components/ProductTable.vue';
 
+import type { ProductSales } from '@/types';
+import type { CategorySales } from '@/types';
+
+
 const analyticsStore = useAnalyticsStore();
 const productStore = useProductStore();
 
@@ -63,8 +61,8 @@ const selectedTimePeriod = ref('30');
 const totalSales = ref(0);
 const topProduct = ref({ name: '', sales: 0 });
 const categoryCount = ref(0);
-const categorySales = ref([]);
-const productSales = ref([]);
+const categorySales = ref<CategorySales[]>([]);
+const productSales = ref<ProductSales[]>([]);
 const products = ref([]);
 const loading = ref(false);
 
@@ -75,7 +73,7 @@ const updateDashboard = async () => {
   await analyticsStore.fetchCategorySales();
   await productStore.fetchProducts();
 
-console.log("analyticsStore.categorySales :",analyticsStore.categorySales.length)
+  console.log("analyticsStore.categorySales :", analyticsStore.categorySales.length);
   totalSales.value = parseFloat(analyticsStore.totalSales.toFixed(2));
   topProduct.value = analyticsStore.trendingProducts;
   categorySales.value = analyticsStore.categorySales;
@@ -211,4 +209,3 @@ body {
 .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
 .bg-white { background-color: var(--card-background); }
 </style>
-
