@@ -11,6 +11,7 @@ export interface TotalSales {
   export interface CategorySales {
     category: string;
     sales: number;
+    percentage:number;
   }
   
   export interface Product {
