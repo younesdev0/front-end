@@ -9,7 +9,7 @@
 const props = defineProps<{
   title: string;
   value: string | number;
-  suffix:sting
+  suffix:string
 }>();
 </script>
 
