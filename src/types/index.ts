@@ -18,6 +18,7 @@ export interface TotalSales {
     ProductID: number;
     ProductName: string;
     Price: number;
+    
     VentsParProduit: number;
   }
   
