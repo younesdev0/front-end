@@ -56,12 +56,7 @@
 import { ref, computed } from 'vue';
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next';
 
-interface Product {
-  ProductID: number;
-  ProductName: string;
-  Price: number;
-  VentsParProduit: number;
-}
+import type { Product } from '@/types';
 
 const props = defineProps<{
   products: Product[];

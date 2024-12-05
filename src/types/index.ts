@@ -14,11 +14,10 @@ export interface TotalSales {
   }
   
   export interface Product {
-    id: number;
-    name: string;
-    dateAdded: string;
-    price: number;
-    totalSales: number;
+    ProductID: number;
+    ProductName: string;
+    Price: number;
+    VentsParProduit: number;
   }
   
   export interface ProductSales {

@@ -11,11 +11,7 @@
 import { ref, onMounted, watch } from 'vue';
 import Chart from 'chart.js/auto';
 
-interface CategorySales {
-  category: string;
-  sales: number;
-  percentage: number;
-}
+import type { CategorySales } from '@/types';
 
 const props = defineProps<{
   data: CategorySales[];
