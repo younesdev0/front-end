@@ -7,7 +7,7 @@ export const useProductStore = defineStore('product', {
     products: [] as Product[],
   }),
   actions: {
-    async fetchProducts(period: string) {
+    async fetchProducts() {
       this.products = await fetchProducts();
     },
   },
