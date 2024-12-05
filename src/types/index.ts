@@ -3,9 +3,10 @@ export interface TotalSales {
   }
   
   export interface TrendingProduct {
-    id: number;
+    productId: number;
     name: string;
-    sales: number;
+    quantity: number;
+    totalAmount: number;
   }
   
   export interface CategorySales {
