@@ -7,7 +7,7 @@
         
 
         <div class="statistics-grid">
-          <StatCard v-if="totalSales" title="Total Sales" :value="totalSales" :subvalue="2" prefix="$" />
+          <StatCard v-if="totalSales" title="Total Sales" :value="totalSales"  suffix="$" />
           <Cards v-if="topProduct.length" :topProducts="topProduct" />
           <StatCard v-if="categoryCount" title="Sales Distribution by Category" :value="categoryCount" suffix="%" />
         </div>

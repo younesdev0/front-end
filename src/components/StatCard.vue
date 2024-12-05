@@ -1,7 +1,7 @@
 <template>
   <div class="stat-card">
     <h3 class="stat-card-title">{{ title }}</h3>
-    <p class="stat-card-value">{{ value }} {{suffix}}</p>
+    <p class="stat-card-value">{{ value }} {{suffix}} {{prefix}} </p>
   </div>
 </template>
 
@@ -9,7 +9,8 @@
 const props = defineProps<{
   title: string;
   value: string | number;
-  suffix:string
+  suffix:string;
+  prefix:string
 }>();
 </script>
 
