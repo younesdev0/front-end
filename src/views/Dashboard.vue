@@ -8,20 +8,21 @@
 
         <div class="statistics-grid">
           <StatCard v-if="totalSales" title="Total Sales" :value="totalSales"  suffix="$" />
+
           <Cards v-if="topProduct.length" :topProducts="topProduct" />
           <StatCard v-if="categoryCount" title="Sales Distribution by Category" :value="categoryCount" suffix="%" />
         </div>
         
         <div class="charts-grid">
-          <CategorySalesChart v-if="categorySales.length" :data="categorySales" />
-          <ProductSalesHistogram v-if="productSales.length" :data="productSales" />
+          <CategorySalesChart v-if="categorySales?.length" :data="categorySales" />
+          <ProductSalesHistogram v-if="productSales?.length" :data="productSales" />
         </div>
 
         <div v-if="loading" class="loader-container">
           <div class="loader"></div>
         </div>
 
-      <div class="filter-container" v-else :products="products.length" >
+      <div class="filter-container" v-else :products="products?.length" >
           <label for="time-period" class="filter-label">Select Time Period</label>
           <select
             id="time-period"

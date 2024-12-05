@@ -1,16 +1,16 @@
 <template>
   <div class="stat-card">
     <h3 class="stat-card-title">{{ title }}</h3>
-    <p class="stat-card-value">{{ value }} {{suffix}} {{prefix}} </p>
+    <p class="stat-card-value">{{ value }} {{suffix}}</p>
   </div>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{
-  title: string;
-  value: string | number;
-  suffix:string;
-  prefix:string
+  title?: string;
+  value?: string | number;
+  suffix?:string;
+
 }>();
 </script>
 
