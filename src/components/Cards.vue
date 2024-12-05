@@ -22,8 +22,10 @@
 </template>
 
 <script lang="ts" setup>
+import type { TrendingProduct } from '@/types';
+
 const props = defineProps<{
-  topProducts: any[];
+  topProducts: TrendingProduct[];
 }>();
 </script>
 
