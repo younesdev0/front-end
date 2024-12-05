@@ -51,6 +51,8 @@ import ProductTable from '@/components/ProductTable.vue';
 
 import type { ProductSales } from '@/types';
 import type { CategorySales } from '@/types';
+import type { Product } from '@/types';
+import type { TrendingProduct } from '@/types';
 
 
 const analyticsStore = useAnalyticsStore();
@@ -59,11 +61,11 @@ const productStore = useProductStore();
 const selectedTimePeriod = ref('30');
 
 const totalSales = ref(0);
-const topProduct = ref({ name: '', sales: 0 });
+const topProduct = ref<TrendingProduct | null>(null);
 const categoryCount = ref(0);
 const categorySales = ref<CategorySales[]>([]);
 const productSales = ref<ProductSales[]>([]);
-const products = ref([]);
+const products = ref<Product[]>([]);
 const loading = ref(false);
 
 const updateDashboard = async () => {
