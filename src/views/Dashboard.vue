@@ -54,7 +54,6 @@ import type { CategorySales } from '@/types';
 import type { Product } from '@/types';
 import type { TrendingProduct } from '@/types';
 
-
 const analyticsStore = useAnalyticsStore();
 const productStore = useProductStore();
 
@@ -77,10 +76,10 @@ const updateDashboard = async () => {
 
   console.log("analyticsStore.categorySales :", analyticsStore.categorySales.length);
   totalSales.value = parseFloat(analyticsStore.totalSales.toFixed(2));
-  topProduct.value = analyticsStore.trendingProducts;
+  topProduct.value = analyticsStore.trendingProducts[0] || null; // Ensure topProduct is a single object or null
   categorySales.value = analyticsStore.categorySales;
   categoryCount.value = analyticsStore.categorySales.length;
-  productSales.value = productStore.products.map(p => ({ name: p.ProductName, sales: p.VentsParProduit }));
+  productSales.value = productStore.products.map(p => ({ name: p.ProductName, sales: p.VentsParProduit } as ProductSales));
   products.value = productStore.products;
 
   loading.value = false;
@@ -88,7 +87,6 @@ const updateDashboard = async () => {
 
 onMounted(updateDashboard);
 </script>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
