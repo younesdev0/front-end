@@ -61,7 +61,7 @@ const productStore = useProductStore();
 const selectedTimePeriod = ref('30');
 
 const totalSales = ref(0);
-const topProduct = ref<TrendingProduct | null>(null);
+const topProduct = ref<TrendingProduct[]>([]);
 const categoryCount = ref(0);
 const categorySales = ref<CategorySales[]>([]);
 const productSales = ref<ProductSales[]>([]);
