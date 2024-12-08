@@ -1,39 +1,66 @@
 # front-end
 
-This template should help get you started developing with Vue 3 in Vite.
+## Projet : Outil Simplifié d'Analyse des Paniers d'Achat
 
-## Recommended IDE Setup
+### Objectif
+Créer un outil d'analyse pour aider un administrateur de site e-commerce à obtenir des informations simples sur les produits les plus vendus, la répartition des ventes par catégorie, et les tendances de ventes.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Ce modèle devrait vous aider à démarrer le développement avec Vue 3 dans Vite.
 
-## Type Support for `.vue` Imports in TS
+## Configuration recommandée de l'IDE
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (et désactiver Vetur).
 
-## Customize configuration
+## Support de type pour les imports `.vue` en TS
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+TypeScript ne peut pas gérer les informations de type pour les imports `.vue` par défaut, nous remplaçons donc l'outil `tsc` par `vue-tsc` pour la vérification des types. Dans les éditeurs, nous avons besoin de [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) pour rendre le service de langage TypeScript conscient des types `.vue`.
 
-## Project Setup
+## Personnaliser la configuration
+
+Voir [Référence de configuration Vite](https://vite.dev/config/).
+
+## Configuration du projet
+
+### Installation des dépendances
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilation et rechargement à chaud pour le développement
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Vérification des types, compilation et minification pour la production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint avec [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+## Lancer l'application
+
+Pour lancer l'application en mode développement, utilisez la commande suivante :
+
+```sh
+npm run dev
+```
+
+Cela démarrera un serveur de développement local et vous pourrez accéder à l'application via `http://localhost:3000` (ou un autre port spécifié dans la configuration).
+
+## Aperçu des fonctionnalités disponibles
+
+- **Hot Module Replacement (HMR)** : Rechargement à chaud des modules pour une expérience de développement fluide.
+- **Support TypeScript** : Vérification des types et complétion automatique grâce à TypeScript.
+- **Linting** : Analyse statique du code avec ESLint pour maintenir une qualité de code élevée.
+- **Compilation et minification** : Préparation du code pour la production avec des optimisations de performance.
+- **Support Vue 3** : Utilisation des dernières fonctionnalités de Vue.js pour construire des interfaces utilisateur réactives.
+
+Pour plus de détails sur la configuration et les fonctionnalités, consultez la documentation officielle de [Vite](https://vite.dev/) et [Vue 3](https://v3.vuejs.org/).
