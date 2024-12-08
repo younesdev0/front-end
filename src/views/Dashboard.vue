@@ -77,7 +77,7 @@ const updateDashboard = async () => {
 
   console.log("analyticsStore.categorySales :", analyticsStore.categorySales.length);
   totalSales.value = parseFloat(analyticsStore.totalSales.toFixed(2));
-  topProduct.value = analyticsStore.trendingProducts[0] || null; // Ensure topProduct is a single object or null
+  topProduct.value = analyticsStore.trendingProducts as TrendingProduct[]; // Ensure the correct type
   categorySales.value = analyticsStore.categorySales;
   categoryCount.value = analyticsStore.categorySales.length;
   productSales.value = productStore.products.map(p => ({ name: p.ProductName, sales: p.VentsParProduit } as ProductSales));
