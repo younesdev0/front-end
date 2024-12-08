@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { TotalSales, TrendingProduct, CategorySales, Product } from '@/types';
 
-const API_BASE_URL = 'http://localhost:8000'; // Replace with your actual API base URL
+const API_BASE_URL = 'https://backend-gamma-five-74.vercel.app'; // Replace with your actual API base URL
 
 const api = axios.create({
   baseURL: API_BASE_URL,
